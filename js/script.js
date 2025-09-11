@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetSection = document.querySelector(targetId);
 
             if (targetSection) {
-                // El offset es para compensar la altura del menú fijo
                 const offsetTop = targetSection.offsetTop - document.querySelector('.main-nav').offsetHeight;
                 window.scrollTo({
                     top: offsetTop,
@@ -27,11 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0;
 
     function showSlide(index) {
-        // Oculta todas las imágenes
         slides.forEach((slide) => {
             slide.classList.remove('active');
         });
-        // Muestra la imagen correcta
         slides[index].classList.add('active');
     }
 
@@ -45,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide);
     });
 
-    // Iniciar el carrusel en la primera imagen
     showSlide(currentSlide);
 });
 
