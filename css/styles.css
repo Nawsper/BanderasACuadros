@@ -7,6 +7,12 @@
 }
 
 /* --- Estilos Generales y Fuentes --- */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   line-height: 1.6;
@@ -145,6 +151,7 @@ header {
   border: none;
   color: white;
   cursor: pointer;
+  margin-left: auto;
 }
 
 .nav-links {
@@ -168,15 +175,18 @@ header {
     background: linear-gradient(to right, #f7b733, #fc4a1a);
     flex-direction: column;
     width: 200px;
-    height: 0;
     overflow: hidden;
     transition: height 0.3s ease;
     border-radius: 0 0 0 15px;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
   }
 
   .nav-links.open {
-    height: 280px;
     padding: 10px 0;
+    max-height: 300px;
+    opacity: 1;
   }
 
   .nav-links li {
@@ -507,6 +517,14 @@ footer {
 }
 
 /* --- Responsividad para móviles --- */
+
+@media (max-width: 1024px) {
+  .main-nav ul {
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 768px) {
   .about-us-content,
   .contact-content {
