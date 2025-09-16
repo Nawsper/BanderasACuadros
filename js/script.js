@@ -49,9 +49,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- Lógica para el Menú Hmaburguesa ---
 
+// Selección de elementos
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 
+// --- Abrir / cerrar con el botón hamburguesa ---
 hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("open");
+});
+
+// --- Cerrar al hacer clic en un enlace del menú ---
+navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+    });
+});
+
+// --- Cerrar al hacer clic fuera del menú ---
+document.addEventListener("click", (event) => {
+    if (
+        !navLinks.contains(event.target) && // clic fuera del menú
+        !hamburger.contains(event.target)   // clic fuera del botón
+    ) {
+        navLinks.classList.remove("open");
+    }
 });
