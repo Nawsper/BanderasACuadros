@@ -199,6 +199,14 @@ header {
   }
 }
 
+.fecha {
+  text-align: right;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px 20px;
+  color: #ffffff;
+}
+
 /* --- Secciones --- */
 
 section {

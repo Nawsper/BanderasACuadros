@@ -68,9 +68,18 @@ navLinks.querySelectorAll("a").forEach((link) => {
 // --- Cerrar al hacer clic fuera del menú ---
 document.addEventListener("click", (event) => {
     if (
-        !navLinks.contains(event.target) && // clic fuera del menú
-        !hamburger.contains(event.target)   // clic fuera del botón
+        !navLinks.contains(event.target) &&
+        !hamburger.contains(event.target)
     ) {
         navLinks.classList.remove("open");
     }
 });
+
+
+// Obtener la fecha actual
+const fechaElemento = document.getElementById("fecha-hoy");
+const hoy = new Date();
+
+// Opciones para mostrar formato legible
+const opciones = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+fechaElemento.textContent = hoy.toLocaleDateString("es-ES", opciones);
