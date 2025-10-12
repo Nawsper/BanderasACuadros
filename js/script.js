@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Lógica para el Carrusel de "Nosotros" ---
+
     const prevButton = document.querySelector('.carousel-button.prev');
     const nextButton = document.querySelector('.carousel-button.next');
     const slides = document.querySelectorAll('.carousel-slide img');
@@ -83,3 +84,106 @@ const hoy = new Date();
 // Opciones para mostrar formato legible
 const opciones = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
 fechaElemento.textContent = hoy.toLocaleDateString("es-ES", opciones);
+
+
+
+//Swiper Galería
+
+const galeriaWrapper = document.getElementById('galeria-wrapper');
+
+const totalImagenes = 66;
+
+for (let i = 1; i <= totalImagenes; i++) {
+    const slide = document.createElement('div');
+    slide.classList.add('swiper-slide');
+
+    const img = document.createElement('img');
+    img.src = `/images/galeria/image_galery_${i}.jpg`;
+    img.alt = `Imagen ${i} de la galería`;
+
+    slide.appendChild(img);
+    galeriaWrapper.appendChild(slide);
+}
+
+
+
+const swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+
+    loop: true,
+    speed: 1000,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+
+    coverflowEffect: {
+        rotate: 30,
+        stretch: 0,
+        depth: 50,
+        modifier: 2,
+        slideShadows: true,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
+
+//Swiper Galería Kids
+
+const galeriaWrapperKids = document.getElementById('galeria-wrapper-kids');
+
+const totalImagenesKids = 19;
+
+for (let i = 1; i <= totalImagenesKids; i++) {
+    const slide = document.createElement('div');
+    slide.classList.add('swiper-slide');
+
+    const img = document.createElement('img');
+    img.src = `/images/galeria_kids/Image_kids_${i}.jpeg`;
+    img.alt = `Imagen ${i} de la galería`;
+
+    slide.appendChild(img);
+    galeriaWrapperKids.appendChild(slide);
+}
+
+// --- Inicializar Swiper Kids ---
+
+const swiperKids = new Swiper(".mySwiperKids", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+
+    loop: true,
+    speed: 1000,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+
+    coverflowEffect: {
+        rotate: 30,
+        stretch: 0,
+        depth: 100,
+        modifier: 5,
+        slideShadows: true,
+    },
+    pagination: {
+        el: ".swiper-pagination-kids",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next-kids",
+        prevEl: ".swiper-button-prev-kids",
+    },
+});

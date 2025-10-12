@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
     <title>Banderas a Cuadros</title>
@@ -20,7 +19,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css?v=2">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 
@@ -55,7 +57,7 @@
                 <div class="container">
                     <div class="home_content">
                         <h1>Banderas a Cuadros</h1>
-                        <h2>Pasión por el automovilismo</h2>
+                        <h2>Pasión por el deporte motor</h2>
                         <div class="social-links">
                             <p class="social-links">Seguinos en nuestras Redes Sociales</p>
                             <a href="https://www.youtube.com/hashtag/banderasacuadrosenorigen" target="_blank"><i
@@ -69,10 +71,14 @@
                     </div>
                     <div class="media-section">
                         <div class="image-row-first">
-                            <img class="img-first" src="/images/Fernando director.jpg"
-                                alt="Director del programa Septimo Sentido">
-                            <img class="img-first" src="images/septimo sentido.jpg"
-                                alt="Banner del programa Septimo Sentido">
+                            <a href="https://www.youtube.com/@Banderasacuadros" target="_blank">
+                                <img class="img-first" src="/images/Fernando director.jpg"
+                                    alt="Director del programa Septimo Sentido">
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=oRxIHzgrDys" target="_blank">
+                                <img class="img-first" src="images/septimo sentido.jpg"
+                                    alt="Banner del programa Septimo Sentido">
+                            </a>
                         </div>
                         <h4>Mira nuestros videos</h4>
                         <div class="video-row">
@@ -93,9 +99,14 @@
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                         <div class="image-row-second">
-                            <img class="img-second" src="images/deporte motor.jpg"
-                                alt="Banner del programa Deporte Motor">
-                            <img class="img-second" src="images/locutor.jpg" alt="Locutor del programa Deporte Motor">
+                            <a href="https://www.youtube.com/hashtag/banderasacuadrosenorigen" target="_blank">
+                                <img class="img-second" src="images/deporte motor.jpg"
+                                    alt="Banner del programa Deporte Motor">
+                            </a>
+                            <a href="https://www.youtube.com/@Banderasacuadros" target="_blank">
+                                <img class="img-second" src="images/locutor.jpg"
+                                    alt="Locutor del programa Deporte Motor">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -107,38 +118,82 @@
                 <div class="about-us-content">
                     <div class="carousel-container">
                         <div class="carousel-slide">
-                            <img src="/images/nosotros/image_nosotros (1).jpg" alt="Imagen del equipo 1" class="active">
-                            <img src="/images/nosotros/image_nosotros (2).jpg" alt="Imagen del equipo 2">
-                            <img src="/images/nosotros/image_nosotros (3).jpg" alt="Imagen del equipo 3">
+                            <img src="/images/nosotros/image_nosotros (1).png" alt="Imagen del equipo 1">
+                            <img src="/images/nosotros/image_nosotros (2).png" alt="Imagen del equipo 2">
+                            <img src="/images/nosotros/image_nosotros (3).png" alt="Imagen del equipo 3">
+                            <img src="/images/nosotros/image_nosotros (4).png" alt="Imagen del equipo 3">
+                            <img src="/images/nosotros/image_nosotros (5).png" alt="Imagen del equipo 3">
+                            <img src="/images/nosotros/image_nosotros (6).png" alt="Imagen del equipo 3">
                         </div>
                         <button class="carousel-button prev">&lt;</button>
                         <button class="carousel-button next">&gt;</button>
                     </div>
                     <div class="about-us-text">
                         <h3>Nuestra Misión</h3>
-                        <p>En Banderas a Cuadros, somos apasionados por el automovilismo y nos dedicamos a cubrir todas
-                            las noticias y eventos relacionados con las carreras de autos en Tierra del Fuego - Río
-                            Grande. Nuestro objetivo es mantener a la comunidad informada y conectada con el emocionante
-                            mundo del automovilismo local.</p>
+                        <p>Banderas a Cuadros es un espacio nacido de la pasión por el deporte motor fueguino, creado y
+                            conducido por <strong>Diego Fernando “Cadillo” Almonacid</strong> y <strong>Fernando
+                                Hernández</strong>, dos referentes
+                            locales que comparten el mismo objetivo: difundir y promover el deporte motor en todas sus
+                            disciplinas.</p>
+                        <br>
+                        <p><strong>Diego Fernando “Cadillo” Almonacid</strong> inició su trayectoria en los años 90,
+                            siendo muy joven,
+                            realizando entrevistas a pilotos y asistiendo a competencias regionales. Con el tiempo, se
+                            consolidó en el ámbito radial con programas como Masticando Chicle y Tina Marley, este
+                            último orientado al entretenimiento. Posteriormente, dio vida a Banderas a Cuadros, un
+                            programa dedicado exclusivamente al automovilismo. A lo largo de su carrera, ha sido
+                            reconocido por sus transmisiones de competencias de pista, rally y del histórico Gran Premio
+                            de la Hermandad.
+                            En 2024, incursionó en el streaming a través del canal Urvox TV, y actualmente forma parte
+                            de FM Origen 99.1, donde continúa combinando la radio tradicional con las transmisiones
+                            digitales.
+                        </p>
+                        <br>
+                        <p><strong>Fernando Hernández</strong>, por su parte, comenzó su camino en 2020, en plena
+                            pandemia, transmitiendo
+                            desde su hogar un especial en vivo sobre el Gran Premio de la Hermandad a través de
+                            Facebook. Su dedicación lo llevó rápidamente al mundo radial con el programa Rueda de
+                            Amigos, que se mantuvo al aire hasta fines de 2023. Además, ha participado en coberturas y
+                            transmisiones de eventos como La Vuelta de Tierra del Fuego, Gran Premio de la Hermandad,
+                            automovilismo en pista y karting.
+                            En 2024 también integró el equipo de Urvox TV, y actualmente continúa su labor en FM Origen
+                            99.1, aportando su voz y conocimiento al automovilismo fueguino.
+                        </p>
+                        <br>
+                        <p>Ambos conductores son orgullosamente <strong>fueguinos</strong>, apasionados por el deporte
+                            motor y
+                            comprometidos con llevar la emoción de cada competencia a los hogares de toda la provincia.
+                        </p>
                     </div>
                 </div>
             </section>
 
+            <!-- Galería principal -->
+
             <section class="container_section" id="galery">
                 <h2>Galería de Fotos</h2>
-                <div class="gallery">
-                    <img src="/images/galeria/image_galery_1.jpg" alt="Auto de carreras con atardecer">
-                    <img src="/images/galeria/image_galery_3.jpg" alt="Auto de carreras">
-                    <img src="/images/galeria/image_galery_4.jpg" alt="Auto de carreras frente">
-                    <img src="/images/galeria/image_galery_5.jpg" alt="Persona haciendo una entrevista">
-                    <img src="/images/galeria/image_galery_6.jpg" alt="Mecánicos trabajando en un auto">
-                    <img src="/images/galeria/image_galery_7.jpg" alt="Persona haciendo una entrevista">
-                    <img src="/images/galeria/image_galery_8.jpg" alt="Mecánicos trabajando en un auto">
-                    <img src="/images/galeria/image_galery_9.jpg" alt="Autos de carreras">
-                    <img src="/images/galeria/image_galery_2.jpg" alt="Auto dañado en la pista">
-                    <img src="/images/galeria/image_galery_10.jpg" alt="Auto dañado en la pista">
-                    <img src="/images/galeria/image_galery_11.jpg" alt="Auto en la pista">
-                    <img src="/images/galeria/image_galery_12.jpg" alt="Auto dañado al costado de la pista">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper" id="galeria-wrapper"></div>
+                    <!-- Botones de navegación -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- Paginación -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <!-- Galería Kids -->
+
+            <section class="container_section" id="galery_kids">
+                <h2>Banderas A Cuadros Moto Club Río Grande AMU - Asociación Motociclística Ushuaia</h2>
+                <h4>3ERA FECHA CAMPEONATO ENDURO/CROSS 2025/26 - MANGA 1 Y 2 CATEGORIA PRE MINI</h4>
+                <div class="swiper mySwiperKids">
+                    <div class="swiper-wrapper" id="galeria-wrapper-kids"></div>
+                    <!-- Botones de navegación -->
+                    <div class="swiper-button-next swiper-button-next-kids"></div>
+                    <div class="swiper-button-prev swiper-button-prev-kids"></div>
+                    <!-- Paginación -->
+                    <div class="swiper-pagination swiper-pagination-kids"></div>
                 </div>
             </section>
 
@@ -193,7 +248,12 @@
         </div>
     </footer>
 
-    <script src="/js/script.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/script.js?v=2"></script>
+
+
 
 </body>
 
