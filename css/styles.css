@@ -368,25 +368,6 @@ section {
   text-align: left;
 }
 
-/* --- Galería --- */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.03);
-}
-
 /* --- Sección Contacto --- */
 #contacto {
   background-color: #3a3a3a;
@@ -587,7 +568,7 @@ footer {
 }
 
 .mySwiper .swiper-slide img {
-  /* width: 100%; */
+  width: 100%;
   height: 100%;
   border-radius: 10px;
   object-fit: contain;
@@ -617,4 +598,36 @@ footer {
   border-radius: 20px;
   object-fit: contain;
   background-color: #c5c2c279;
+}
+
+/*  Ajustes Responsive Galerias */
+@media (max-width: 768px) {
+  .swiper {
+    max-width: 100%;
+  }
+
+  .swiper-slide {
+    width: 80% !important;
+    background-color: #c5c2c2;
+    border-radius: 10px;
+  }
+
+  .swiper-slide img {
+    object-fit: contain;
+  }
+
+  #galeria-wrapper-kids img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .swiper-slide {
+    width: 90% !important;
+  }
+
+  .swiper-slide img {
+    border-radius: 8px;
+  }
 }
