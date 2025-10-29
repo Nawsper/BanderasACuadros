@@ -187,3 +187,16 @@ const swiperKids = new Swiper(".mySwiperKids", {
         prevEl: ".swiper-button-prev-kids",
     },
 });
+
+// --- Doble clic en el carrusel principal para abrir la galería completa ---
+const swiperContainer = document.querySelector('.mySwiper');
+swiperContainer.addEventListener('dblclick', () => {
+    window.open('/pages/gallery-complete.html', '_blank');
+});
+
+// --- Doble clic en el carrusel Kids para abrir su galería completa ---
+const swiperContainerKids = document.querySelector('.mySwiperKids');
+swiperContainerKids.addEventListener('dblclick', () => {
+    window.open('/pages/gallery-complete.html', '_blank');
+});
+

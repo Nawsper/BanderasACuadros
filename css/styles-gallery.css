@@ -1,0 +1,121 @@
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 4.9rem;
+  background-color: #4d4d4d; /* Fondo gris oscuro, aplicado en caso de no usar el linear-gradient */
+  color: #ffffff;
+}
+
+main {
+  padding: 2%;
+  background-image: linear-gradient(to bottom right, #383838, #ffffff);
+}
+
+a {
+  color: #ffcc33;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  text-align: center;
+  padding: 50px 20px 20px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #ff4fa9;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+section {
+  padding: 20px 40px 50px;
+}
+
+section h2 {
+  text-align: center;
+  color: #ff4fa9;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+section h4 {
+  text-align: center;
+  color: #ccc;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px 40px 80px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background-color: #c5c2c279;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 79, 169, 0.4);
+}
+
+/* Botón volver */
+.back-btn {
+  display: inline-block;
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #ff4fa9;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #ff0077;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .gallery-grid {
+    padding: 15px;
+    gap: 10px;
+  }
+  .gallery-grid img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+  .gallery-grid img {
+    height: 180px;
+  }
+  section h2 {
+    font-size: 1.3rem;
+  }
+}
