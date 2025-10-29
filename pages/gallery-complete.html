@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Completa - Banderas A Cuadros</title>
+    <link rel="stylesheet" href="/css/styles.css?v=2">
+</head>
+
+<body>
+    <main>
+        <header>
+            <nav class="main-nav">
+                <div class="nav-content">
+                    <a href="../index.html">
+                        <img src="/images/logo_principal.jpg" alt="Logo mini" class="logo-mini">
+                    </a>
+                    <!-- Botón hamburguesa -->
+                    <button class="hamburger" aria-label="Abrir menú">
+                        ☰
+                    </button>
+                    <ul class="nav-links">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../index.html#aboutUs">Nosotros</a></li>
+                        <li><a href="../index.html#gallery">Galería</a></li>
+                        <!-- <li><a href="../index.html#contact">Contacto</a></li> -->
+                    </ul>
+                </div>
+            </nav>
+            <h1>🏁 Galería Completa 🏁</h1>
+            <!-- <p>Disfrutá todas las imágenes de nuestras coberturas y eventos</p> -->
+        </header>
+
+        <!-- Galería Principal -->
+        <section>
+            <!-- <h2>🏁 Galería General 🏁</h2> -->
+            <h4>Imágenes de nuestras coberturas, transmisiones y eventos del deporte motor fueguino</h4>
+            <div class="gallery-grid" id="grid-galeria"></div>
+        </section>
+
+        <!-- Galería Kids -->
+        <section>
+            <!-- <h2>Galería Kids</h2> -->
+            <h4>3° Fecha Campeonato Enduro/Cross 2025/26 - MANGA 1 Y 2 CATEGORÍA PRE MINI</h4>
+            <div class="gallery-grid" id="grid-galeria-kids"></div>
+        </section>
+
+        <div style="text-align:center;">
+            <a href="../index.html" class="back-btn">Volver al inicio</a>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <a href="#" class="close-btn">&times;</a>
+            <span class="lightbox-prev">&#10094;</span>
+            <img id="lightbox-img" src="" alt="Imagen ampliada">
+            <span class="lightbox-next">&#10095;</span>
+        </div>
+
+        <script src="/js/script-gallery.js?v=2"></script>
+    </main>
+</body>
+
+</html>
