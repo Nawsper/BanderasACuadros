@@ -373,6 +373,37 @@ section {
   text-align: left;
 }
 
+.title-notice{
+    margin-top: 5rem;
+}
+
+.notices-text-content {
+  max-height: 350px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.notices-text-content.expanded {
+  max-height: 3000px;
+}
+
+.read-more-btn {
+  margin-top: 10px;
+  background-color: #fc4a1a;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #f7b733;
+  text-decoration: none;
+}
+
 /* --- Sección Contacto --- */
 #contacto {
   background-color: #3a3a3a;

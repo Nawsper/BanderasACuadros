@@ -288,3 +288,16 @@ modalImg.addEventListener("mouseup", () => {
 modalImg.addEventListener("mouseleave", () => {
     isDragging = false;
 });
+
+const readMoreBtn = document.getElementById("read-more-btn");
+const textContent = document.querySelector(".notices-text-content");
+
+readMoreBtn.addEventListener("click", () => {
+    textContent.classList.toggle("expanded");
+
+    if (textContent.classList.contains("expanded")) {
+        readMoreBtn.textContent = "Leer menos";
+    } else {
+        readMoreBtn.textContent = "Leer más";
+    }
+});
