@@ -915,6 +915,27 @@ footer {
   border-radius: 15px;
 }
 
+
+/* Banner Fiestas */
+
+.image-banner-fiestas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3rem;
+  gap: 20px;
+}
+
+.image-banner-fiestas img {
+  width: 70%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+
 /* Noticias Collage */
 .notices-layout {
   display: flex;
