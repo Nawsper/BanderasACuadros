@@ -935,6 +935,26 @@ footer {
   border-radius: 15px;
 }
 
+/* Imagenes noticias */
+
+.image-calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-calendar img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: contain;
+}
+
+.image-calendar,
+.notices-calendar {
+    flex: 1 1 50%;
+}
 
 /* Noticias Collage */
 .notices-layout {
