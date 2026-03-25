@@ -49,6 +49,17 @@ for (let i = 1; i <= totalImagenesKids; i++) {
     gridKids.appendChild(img);
 }
 
+// --- Galería Pista ---
+const gridPista = document.getElementById('grid-galeria-pista');
+const totalImagenesPista = 35;
+
+for (let i = 1; i <= totalImagenesPista; i++) {
+    const img = document.createElement('img');
+    img.src = `/images/pista_2026/automovilismo_pista_2026_${i}.jpeg`;
+    img.alt = `Imagen Pista ${i}`;
+    gridPista.appendChild(img);
+}
+
 // --- Lightbox funcional ---
 
 document.addEventListener("DOMContentLoaded", () => {
