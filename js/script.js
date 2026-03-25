@@ -200,6 +200,56 @@ swiperContainerKids.addEventListener('dblclick', () => {
     window.open('/pages/gallery-complete.html', '_blank');
 });
 
+//Swiper Galería Automovilismo Pista 2026
+
+const galeriaWrapperPista = document.getElementById('galeria-wrapper-pista');
+
+const totalImagenesPista = 35;
+
+for (let i = 1; i <= totalImagenesPista; i++) {
+    const slide = document.createElement('div');
+    slide.classList.add('swiper-slide');
+
+    const img = document.createElement('img');
+    img.src = `/images/pista_2026/automovilismo_pista_2026_${i}.jpeg`;
+    img.alt = `Imagen ${i} de la galería`;
+
+    slide.appendChild(img);
+    galeriaWrapperPista.appendChild(slide);
+}
+
+// --- Inicializar Swiper Pista ---
+
+const swiperPista = new Swiper(".mySwiperPista", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+
+    loop: true,
+    speed: 1000,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+
+    coverflowEffect: {
+        rotate: 30,
+        stretch: 0,
+        depth: 100,
+        modifier: 5,
+        slideShadows: true,
+    },
+    pagination: {
+        el: ".swiper-pagination-pista",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next-pista",
+        prevEl: ".swiper-button-prev-pista",
+    },
+});
+
 // Modal noticias
 // Variables globales
 let zoom = 1;
@@ -208,7 +258,7 @@ let startX = 0;
 let startY = 0;
 
 // Selección de elementos
-const collageImages = document.querySelectorAll('.notices-collage img');
+const collageImages = document.querySelectorAll('.notices-collage img, .image-calendar img, .notices-collage-img img');
 const modal = document.getElementById('modal-img');
 const modalImg = document.getElementById('modal-image-show');
 const closeModal = document.querySelector('.close-modal');
@@ -288,6 +338,8 @@ modalImg.addEventListener("mouseup", () => {
 modalImg.addEventListener("mouseleave", () => {
     isDragging = false;
 });
+
+// Botón "Ver más"
 
 const readMoreBtn = document.getElementById("read-more-btn");
 const textContent = document.querySelector(".notices-text-content");

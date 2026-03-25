@@ -609,6 +609,32 @@ footer {
   background-color: #c5c2c279;
 }
 
+/* Swiper galería pista*/
+
+.mySwiperPista {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.mySwiperPista .swiper-slide {
+  display: flex;
+  background-position: center;
+  background-size: cover;
+  width: 800px;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
+.mySwiperPista .swiper-slide img {
+  height: 100%;
+  border-radius: 20px;
+  object-fit: contain;
+  background-color: #c5c2c279;
+}
+
+
 /* Swiper galería kids*/
 
 .mySwiperKids {
@@ -685,6 +711,26 @@ footer {
   text-decoration: none;
 }
 
+/* Botón ver más final */
+
+.ver-mas-end {
+  margin: 2rem auto;
+  background-color: #fc4a1a;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: block;
+  width: fit-content;
+  text-align: center;
+}
+
+.ver-mas-end:hover {
+  background-color: #f7b733;
+  text-decoration: none;
+}
+
 /* Botón volver */
 .back-btn {
   display: inline-block;
@@ -719,6 +765,7 @@ footer {
   border-radius: 12px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   background-color: #ffcc33;
+  cursor: pointer;
 }
 
 .gallery-grid img:hover {
@@ -929,10 +976,17 @@ footer {
     height: auto;
     border-radius: 15px;
     object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-calendar img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .image-calendar,
-.notices-calendar {
+.notices-calendar{
     flex: 1 1 50%;
 }
 
@@ -978,6 +1032,56 @@ footer {
 }
 
 .notices-collage-luto img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.image-calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-calendar img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-calendar img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.image-calendar,
+.notices-calendar{
+    flex: 1 1 50%;
+}
+
+.notices-collage-img {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.notices-collage-img img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notices-collage-img img:hover {
   transform: scale(1.08);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
