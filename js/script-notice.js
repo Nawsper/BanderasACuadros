@@ -35,7 +35,7 @@ let startX = 0;
 let startY = 0;
 
 // Selección de elementos
-const collageImages = document.querySelectorAll('.notices-collage img, .image-calendar img, .notices-collage-img img');
+const collageImages = document.querySelectorAll('.notices-collage img, .image-calendar img, .notices-collage-img img, .notices-collage-vuelta img');
 const modal = document.getElementById('modal-img');
 const modalImg = document.getElementById('modal-image-show');
 const closeModal = document.querySelector('.close-modal');
