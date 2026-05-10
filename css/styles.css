@@ -955,8 +955,8 @@ footer {
 }
 
 .image-banner img {
-  width: 100%;
-  height: auto;
+  width: 60%;
+  height: 60%;
   display: block;
   object-fit: cover;
   border-radius: 15px;
