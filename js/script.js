@@ -200,6 +200,12 @@ swiperContainerKids.addEventListener('dblclick', () => {
     window.open('/pages/gallery-complete.html', '_blank');
 });
 
+// --- Doble clic en el carrusel Pista para abrir su galería completa ---
+const swiperContainerPista = document.querySelector('.mySwiperPista');
+swiperContainerPista.addEventListener('dblclick', () => {
+    window.open('/pages/gallery-complete.html', '_blank');
+});
+
 //Swiper Galería Automovilismo Pista 2026
 
 const galeriaWrapperPista = document.getElementById('galeria-wrapper-pista');
