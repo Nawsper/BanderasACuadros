@@ -1,32 +1,3 @@
-// --- Lógica para el Menú Hmaburguesa ---
-
-// Selección de elementos
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-
-// --- Abrir / cerrar con el botón hamburguesa ---
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-});
-
-// --- Cerrar al hacer clic en un enlace del menú ---
-navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-    });
-});
-
-// --- Cerrar al hacer clic fuera del menú ---
-document.addEventListener("click", (event) => {
-    if (
-        !navLinks.contains(event.target) &&
-        !hamburger.contains(event.target)
-    ) {
-        navLinks.classList.remove("open");
-    }
-});
-
-
 // Obtener la fecha actual
 const fechaElemento = document.getElementById("fecha-hoy");
 const hoy = new Date();
@@ -36,53 +7,54 @@ const opciones = { weekday: "long", year: "numeric", month: "long", day: "numeri
 fechaElemento.textContent = hoy.toLocaleDateString("es-ES", opciones);
 
 
+// --- Construcción de grid para las galerias ---
+function buildGrid(gridId, total, srcFn, altFn) {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+
+    for (let i = 1; i <= total; i++) {
+        const img = document.createElement("img");
+        img.src = srcFn(i);
+        img.alt = altFn(i);
+        grid.appendChild(img);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
 // --- Galería principal ---
-const grid = document.getElementById('grid-galeria');
-const totalImagenes = 66;
-
-for (let i = 1; i <= totalImagenes; i++) {
-    const img = document.createElement('img');
-    img.src = `/images/galeria/image_galery_${i}.jpg`;
-    img.alt = `Imagen ${i}`;
-    grid.appendChild(img);
-}
-
+buildGrid(
+    "grid-galeria",
+    66,
+    (i) => `/images/galeria/image_galery_${i}.jpg`,
+    (i) => `Imagen ${i}`
+);
 // --- Galería Kids ---
-const gridKids = document.getElementById('grid-galeria-kids');
-const totalImagenesKids = 19;
-
-for (let i = 1; i <= totalImagenesKids; i++) {
-    const img = document.createElement('img');
-    img.src = `/images/galeria_kids/Image_kids_${i}.jpeg`;
-    img.alt = `Imagen Kids ${i}`;
-    gridKids.appendChild(img);
-}
-
+buildGrid(
+    "grid-galeria-kids",
+    19,
+    (i) => `/images/galeria_kids/Image_kids_${i}.jpeg`,
+    (i) => `Imagen Kids ${i}`
+);
 // --- Galería Pista ---
-const gridPista = document.getElementById('grid-galeria-pista');
-const totalImagenesPista = 35;
-
-for (let i = 1; i <= totalImagenesPista; i++) {
-    const img = document.createElement('img');
-    img.src = `/images/pista_2026/automovilismo_pista_2026_${i}.jpeg`;
-    img.alt = `Imagen Pista ${i}`;
-    gridPista.appendChild(img);
-}
+buildGrid(
+    "grid-galeria-pista",
+    35,
+    (i) => `/images/pista_2026/automovilismo_pista_2026_${i}.jpeg`,
+    (i) => `Imagen Pista ${i}`
+);
 
 // --- Lightbox funcional ---
 
-document.addEventListener("DOMContentLoaded", () => {
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
     const prevBtn = document.querySelector(".lightbox-prev");
     const nextBtn = document.querySelector(".lightbox-next");
-
-    // Seleccionamos todas las imágenes de ambas galerías
     const galleryImages = document.querySelectorAll(".gallery-grid img");
     let currentIndex = 0;
     let zoom = 1;
     let isDragging = false;
-    let startX, startY, scrollLeft, scrollTop;
+    let startX, startY;
 
     // Mostrar imagen en el lightbox
     const showLightbox = (index) => {

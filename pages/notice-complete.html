@@ -4,36 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
     <title>Todas las Noticias - Banderas A Cuadros</title>
-    <link rel="stylesheet" href="/css/styles.css?v=2">
+    <meta name="description" content="Noticias, eventos y actividades sobre carreras de autos locales en Tierra del Fuego — Río Grande.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Titillium+Web:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/styles.css?v=3">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
 <body>
+
+    <header>
+        <nav class="main-nav">
+            <div class="nav-content">
+                <a href="../index.html">
+                    <img src="/images/logo_principal.jpg" alt="Logo mini" class="logo-mini">
+                </a>
+                <!-- Botón hamburguesa -->
+                <button class="hamburger" aria-label="Abrir menú">
+                    ☰
+                </button>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html#notices">Noticias</a></li>
+                    <li><a href="../index.html#aboutUs">Nosotros</a></li>
+                    <li><a href="../index.html#gallery">Galería</a></li>
+                </ul>
+                <!-- Fecha -->
+                <div id="fecha-hoy" class="nav-fecha"></div>
+            </div>
+        </nav>
+        <h1>🏁 Todas las noticias 🏁</h1>
+
+    </header>
+
     <main>
-        <header>
-            <nav class="main-nav">
-                <div class="nav-content">
-                    <a href="../index.html">
-                        <img src="/images/logo_principal.jpg" alt="Logo mini" class="logo-mini">
-                    </a>
-                    <!-- Botón hamburguesa -->
-                    <button class="hamburger" aria-label="Abrir menú">
-                        ☰
-                    </button>
-                    <ul class="nav-links">
-                        <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="../index.html#notices">Noticias</a></li>
-                        <li><a href="../index.html#aboutUs">Nosotros</a></li>
-                        <li><a href="../index.html#gallery">Galería</a></li>
-                    </ul>
-                    <!-- Fecha -->
-                    <div id="fecha-hoy" class="nav-fecha"></div>
-                </div>
-            </nav>
-            <h1>🏁 Todas las noticias 🏁</h1>
-
-        </header>
-
         <!-- Noticias Principal -->
 
             <section class="container_section" id="notices">
@@ -42,7 +59,7 @@
                 <section class="container_section--notice" id="calendario">
                     <div class="notices-layout">
                         <div class="image-calendar">
-                            <img class="image-calendar" src="/images/noticias/Calendario2026.jpeg">                            
+                            <img class="image-calendar" src="/images/noticias/Calendario2026.jpeg" alt="calendario 2026">                            
                         </div>
 
                         <div class="notices-calendar">
@@ -91,7 +108,7 @@
                         </div>
 
                         <div class="notices-collage-vuelta">
-                            <img class="notices-collage-vuelta" src="/images/noticias/noticias-vuelta-tdf.jpeg">                            
+                            <img class="notices-collage-vuelta" src="/images/noticias/noticias-vuelta-tdf.jpeg" alt="vuelta a la tierra del fuego">                            
                         </div>
                     </div>
                 </section>
@@ -101,10 +118,10 @@
                     <div class="notices-layout">
                         <div class="notices-collage-img">
                             <div>
-                                <img class="notices-collage-img" src="/images/noticias/noticias-automovilismo-pista (1).jpeg">
+                                <img class="notices-collage-img" src="/images/noticias/noticias-automovilismo-pista (1).jpeg" alt="Automovilismo en pista">
                             </div>   
                             <div>
-                                <img class="notices-collage-img" src="/images/noticias/noticias-automovilismo-pista (2).jpeg">                 
+                                <img class="notices-collage-img" src="/images/noticias/noticias-automovilismo-pista (2).jpeg" alt="Automovilismo en pista">                 
                             </div>
                         </div>
 
@@ -154,7 +171,7 @@
                         </div>
 
                         <div class="notices-collage-img">
-                            <img class="notices-collage-img" src="/images/noticias/noticias-fecha-apitur.jpeg">                            
+                            <img class="notices-collage-img" src="/images/noticias/noticias-fecha-apitur.jpeg" alt="Primera fecha de APITUR">                            
                         </div>
                     </div>
                 </section>
@@ -210,7 +227,7 @@
                         </div>
 
                         <div class="notices-collage-img">
-                            <img class="notices-collage-img" src="/images/noticias/noticias-podio-garrido.jpeg">                            
+                            <img class="notices-collage-img" src="/images/noticias/noticias-podio-garrido.jpeg" alt="Lucas Garro en el podio">                            
                         </div>
                     </div>
                 </section>
@@ -238,11 +255,11 @@
                             <h6>Escrito por: Fernando Hernández</h6>
                         </div>
                         <div class="notices-collage">
-                            <img src="/images/noticias/noticias-karting (3).jpeg" class="big">
-                            <img src="/images/noticias/noticias-karting (1).jpeg">
-                            <img src="/images/noticias/noticias-karting (4).jpeg">
-                            <img src="/images/noticias/noticias-karting (2).jpeg" class="big">
-                            <img src="/images/noticias/noticias-karting (5).jpeg" class="wide">
+                            <img src="/images/noticias/noticias-karting (3).jpeg" alt="Karting en Ushuaia" class="big">
+                            <img src="/images/noticias/noticias-karting (1).jpeg" alt="Karting en Ushuaia">
+                            <img src="/images/noticias/noticias-karting (4).jpeg" alt="Karting en Ushuaia">
+                            <img src="/images/noticias/noticias-karting (2).jpeg" alt="Karting en Ushuaia" class="big">
+                            <img src="/images/noticias/noticias-karting (5).jpeg" alt="Karting en Ushuaia" class="wide">
                         </div>
                     </div>
                 </section>
@@ -251,11 +268,11 @@
                 <section class="container_section--notice" id="super-especial">
                     <div class="notices-layout">
                         <div class="notices-collage">
-                            <img src="/images/noticias/noticias-especial (2).jpeg" class="big">
-                            <img src="/images/noticias/noticias-especial (5).jpeg" class="wide">
-                            <img src="/images/noticias/noticias-especial (3).jpeg" class="big">
-                            <img src="/images/noticias/noticias-especial (1).jpeg">
-                            <img src="/images/noticias/noticias-especial (4).jpeg">
+                            <img src="/images/noticias/noticias-especial (2).jpeg" alt="Super Especial" class="big">
+                            <img src="/images/noticias/noticias-especial (5).jpeg" alt="Super Especial" class="wide">
+                            <img src="/images/noticias/noticias-especial (3).jpeg" alt="Super Especial" class="big">
+                            <img src="/images/noticias/noticias-especial (1).jpeg" alt="Super Especial">
+                            <img src="/images/noticias/noticias-especial (4).jpeg" alt="Super Especial">
                         </div>
                         <div class="notices-text">
                             <h3>🚥 VOLVIO EL SUPER ESPECIAL 🚥</h3>
@@ -315,7 +332,7 @@
                         </div>
 
                         <div class="notices-collage-luto">
-                            <img src="/images/lazo_luto.jpeg">                            
+                            <img src="/images/lazo_luto.jpeg" alt="Luto" class="luto">                            
                         </div>
                     </div>
                 </section>
@@ -323,7 +340,7 @@
             </section>
 
         <div style="text-align:center;">
-            <a href="notice-complete.html" class="back-btn">Volver al principio</a>
+            <a href="#" class="back-btn">Volver al principio</a>
         </div>
 
         <div id="modal-img" class="modal-img">
@@ -331,14 +348,29 @@
              <img id="modal-image-show">
         </div>
 
-        <div id="lightbox" class="lightbox">
-            <a href="#" class="close-btn">&times;</a>
-            <span class="lightbox-prev">&#10094;</span>
-            <img id="lightbox-img" src="" alt="Imagen ampliada">
-            <span class="lightbox-next">&#10095;</span>
-        </div>
+    <script src="/js/nav.js?v=3"></script>
     <script src="/js/script-notice.js?v=3"></script>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-social">
+                <p class="footer-social--p">Seguinos en nuestras Redes Sociales</p>
+                <a href="https://www.youtube.com/hashtag/banderasacuadrosenorigen" target="_blank"><i
+                        class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/banderasacuadrosrg/" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063793023298" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/5492964541992" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <div class="footer-by">
+                    <p>&copy; 2025 Banderas a Cuadros. Todos los derechos reservados.</p>
+                    <p>Desarrollado por <a href="https://www.linkedin.com/in/burrutyasmin/" target="_blank">Nawsper</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

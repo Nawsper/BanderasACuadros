@@ -47,36 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-// --- Lógica para el Menú Hmaburguesa ---
-
-// Selección de elementos
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-
-// --- Abrir / cerrar con el botón hamburguesa ---
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-});
-
-// --- Cerrar al hacer clic en un enlace del menú ---
-navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-    });
-});
-
-// --- Cerrar al hacer clic fuera del menú ---
-document.addEventListener("click", (event) => {
-    if (
-        !navLinks.contains(event.target) &&
-        !hamburger.contains(event.target)
-    ) {
-        navLinks.classList.remove("open");
-    }
-});
-
-
 // Obtener la fecha actual
 const fechaElemento = document.getElementById("fecha-hoy");
 const hoy = new Date();
@@ -86,276 +56,95 @@ const opciones = { weekday: "long", year: "numeric", month: "long", day: "numeri
 fechaElemento.textContent = hoy.toLocaleDateString("es-ES", opciones);
 
 
+// --- Construcción de slides para las galerias ---
 
-//Swiper Galería
+function buildSlides(wrapperId, total, srcFn, altFn) {
+    const wrapper = document.getElementById(wrapperId);
+    if (!wrapper) return;
 
-const galeriaWrapper = document.getElementById('galeria-wrapper');
+    for (let i = 1; i <= total; i++) {
+        const slide = document.createElement("div");
+        slide.classList.add("swiper-slide");
 
-const totalImagenes = 66;
+        const img = document.createElement("img");
+        img.src = srcFn(i);
+        img.alt = altFn(i);
 
-for (let i = 1; i <= totalImagenes; i++) {
-    const slide = document.createElement('div');
-    slide.classList.add('swiper-slide');
-
-    const img = document.createElement('img');
-    img.src = `/images/galeria/image_galery_${i}.jpg`;
-    img.alt = `Imagen ${i} de la galería`;
-
-    slide.appendChild(img);
-    galeriaWrapper.appendChild(slide);
+        slide.appendChild(img);
+        wrapper.appendChild(slide);
+    }
 }
 
+// Galería principal
+buildSlides(
+    "galeria-wrapper",
+    66,
+    (i) => `/images/galeria/image_galery_${i}.jpg`,
+    (i) => `Imagen ${i} de la galería`
+);
 
+// Galería Kids
+buildSlides(
+    "galeria-wrapper-kids",
+    19,
+    (i) => `/images/galeria_kids/Image_kids_${i}.jpeg`,
+    (i) => `Imagen Kids ${i} de la galería`
+);
 
-const swiper = new Swiper(".mySwiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
+// Galería Automovilismo Pista 2026
+buildSlides(
+    "galeria-wrapper-pista",
+    35,
+    (i) => `/images/pista_2026/automovilismo_pista_2026_${i}.jpeg`,
+    (i) => `Imagen Pista ${i} de la galería`
+);
 
-    loop: true,
-    speed: 1000,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
+// --- Inicializar Swipers de galerias---
 
-    coverflowEffect: {
-        rotate: 30,
-        stretch: 0,
-        depth: 50,
-        modifier: 2,
-        slideShadows: true,
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
-
-
-//Swiper Galería Kids
-
-const galeriaWrapperKids = document.getElementById('galeria-wrapper-kids');
-
-const totalImagenesKids = 19;
-
-for (let i = 1; i <= totalImagenesKids; i++) {
-    const slide = document.createElement('div');
-    slide.classList.add('swiper-slide');
-
-    const img = document.createElement('img');
-    img.src = `/images/galeria_kids/Image_kids_${i}.jpeg`;
-    img.alt = `Imagen ${i} de la galería`;
-
-    slide.appendChild(img);
-    galeriaWrapperKids.appendChild(slide);
+function initSwiper(selector, paginationEl, nextEl, prevEl, depth, modifier) {
+    return new Swiper(selector, {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true,
+        speed: 1000,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        coverflowEffect: {
+            rotate: 30,
+            stretch: 0,
+            depth: depth,
+            modifier: modifier,
+            slideShadows: true,
+        },
+        pagination: { el: paginationEl, clickable: true },
+        navigation: { nextEl: nextEl, prevEl: prevEl },
+    });
 }
 
-// --- Inicializar Swiper Kids ---
+const swiper      = initSwiper(".mySwiper",      ".swiper-pagination",       ".swiper-button-next",       ".swiper-button-prev",       50,  2);
+const swiperKids  = initSwiper(".mySwiperKids",  ".swiper-pagination-kids",  ".swiper-button-next-kids",  ".swiper-button-prev-kids",  100, 5);
+const swiperPista = initSwiper(".mySwiperPista", ".swiper-pagination-pista", ".swiper-button-next-pista", ".swiper-button-prev-pista", 100, 5);
 
-const swiperKids = new Swiper(".mySwiperKids", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-
-    loop: true,
-    speed: 1000,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-
-    coverflowEffect: {
-        rotate: 30,
-        stretch: 0,
-        depth: 100,
-        modifier: 5,
-        slideShadows: true,
-    },
-    pagination: {
-        el: ".swiper-pagination-kids",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next-kids",
-        prevEl: ".swiper-button-prev-kids",
-    },
-});
 
 // --- Doble clic en el carrusel principal para abrir la galería completa ---
 const swiperContainer = document.querySelector('.mySwiper');
 swiperContainer.addEventListener('dblclick', () => {
-    window.open('/pages/gallery-complete.html', '_blank');
+    window.location.href = '/pages/gallery-complete.html';
 });
 
 // --- Doble clic en el carrusel Kids para abrir su galería completa ---
 const swiperContainerKids = document.querySelector('.mySwiperKids');
 swiperContainerKids.addEventListener('dblclick', () => {
-    window.open('/pages/gallery-complete.html', '_blank');
+    window.location.href = '/pages/gallery-complete.html';
 });
 
 // --- Doble clic en el carrusel Pista para abrir su galería completa ---
 const swiperContainerPista = document.querySelector('.mySwiperPista');
 swiperContainerPista.addEventListener('dblclick', () => {
-    window.open('/pages/gallery-complete.html', '_blank');
+    window.location.href = '/pages/gallery-complete.html';
 });
 
-//Swiper Galería Automovilismo Pista 2026
-
-const galeriaWrapperPista = document.getElementById('galeria-wrapper-pista');
-
-const totalImagenesPista = 35;
-
-for (let i = 1; i <= totalImagenesPista; i++) {
-    const slide = document.createElement('div');
-    slide.classList.add('swiper-slide');
-
-    const img = document.createElement('img');
-    img.src = `/images/pista_2026/automovilismo_pista_2026_${i}.jpeg`;
-    img.alt = `Imagen ${i} de la galería`;
-
-    slide.appendChild(img);
-    galeriaWrapperPista.appendChild(slide);
-}
-
-// --- Inicializar Swiper Pista ---
-
-const swiperPista = new Swiper(".mySwiperPista", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-
-    loop: true,
-    speed: 1000,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-
-    coverflowEffect: {
-        rotate: 30,
-        stretch: 0,
-        depth: 100,
-        modifier: 5,
-        slideShadows: true,
-    },
-    pagination: {
-        el: ".swiper-pagination-pista",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next-pista",
-        prevEl: ".swiper-button-prev-pista",
-    },
-});
-
-// Modal noticias
-// Variables globales
-let zoom = 1;
-let isDragging = false;
-let startX = 0;
-let startY = 0;
-
-// Selección de elementos
-const collageImages = document.querySelectorAll('.notices-collage img, .image-calendar img, .notices-collage-img img, notice, .notices-collage-vuelta img');
-const modal = document.getElementById('modal-img');
-const modalImg = document.getElementById('modal-image-show');
-const closeModal = document.querySelector('.close-modal');
-
-// Abrir imagen en modal
-collageImages.forEach(img => {
-    img.addEventListener('click', () => {
-        modal.classList.add('show');
-        modalImg.src = img.src;
-        resetZoom();
-    });
-});
-
-// Cerrar modal con botón
-closeModal.addEventListener('click', () => {
-    closeModalImg();
-});
-
-// Cerrar modal clic fuera de la imagen
-modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        closeModalImg();
-    }
-});
-
-// Función cerrar modal
-const closeModalImg = () => {
-    modal.classList.remove("show");
-    resetZoom();
-};
-
-// Resetear zoom
-const resetZoom = () => {
-    zoom = 1;
-    modalImg.style.transform = "scale(1)";
-    modalImg.style.cursor = "zoom-in";
-};
-
-// Doble click = zoom toggle
-modalImg.addEventListener("dblclick", () => {
-    zoom = zoom === 1 ? 2.5 : 1;
-    modalImg.style.transform = `scale(${zoom})`;
-    modalImg.style.cursor = zoom > 1 ? "grab" : "zoom-in";
-});
-
-// Zoom con scroll
-modal.addEventListener("wheel", (e) => {
-    e.preventDefault();
-    if (e.deltaY < 0) zoom += 0.1;
-    else zoom = Math.max(1, zoom - 0.1);
-    modalImg.style.transform = `scale(${zoom})`;
-    modalImg.style.cursor = zoom > 1 ? "grab" : "zoom-in";
-});
-
-// Mover imagen con drag
-modalImg.addEventListener("mousedown", (e) => {
-    if (zoom === 1) return;
-    isDragging = true;
-    startX = e.pageX;
-    startY = e.pageY;
-    modalImg.style.cursor = "grabbing";
-});
-
-modalImg.addEventListener("mousemove", (e) => {
-    if (!isDragging || zoom === 1) return;
-    e.preventDefault();
-    const moveX = e.pageX - startX;
-    const moveY = e.pageY - startY;
-    modalImg.style.transform = `scale(${zoom}) translate(${moveX / zoom}px, ${moveY / zoom}px)`;
-});
-
-modalImg.addEventListener("mouseup", () => {
-    isDragging = false;
-    modalImg.style.cursor = zoom > 1 ? "grab" : "zoom-in";
-});
-
-modalImg.addEventListener("mouseleave", () => {
-    isDragging = false;
-});
-
-// Botón "Ver más"
-
-const readMoreBtn = document.getElementById("read-more-btn");
-const textContent = document.querySelector(".notices-text-content");
-
-readMoreBtn.addEventListener("click", () => {
-    textContent.classList.toggle("expanded");
-
-    if (textContent.classList.contains("expanded")) {
-        readMoreBtn.textContent = "Leer menos";
-    } else {
-        readMoreBtn.textContent = "Leer más";
-    }
-});
