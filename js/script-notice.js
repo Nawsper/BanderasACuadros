@@ -1,31 +1,3 @@
-// --- Lógica para el Menú Hmaburguesa ---
-
-// Selección de elementos
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-
-// --- Abrir / cerrar con el botón hamburguesa ---
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-});
-
-// --- Cerrar al hacer clic en un enlace del menú ---
-navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-    });
-});
-
-// --- Cerrar al hacer clic fuera del menú ---
-document.addEventListener("click", (event) => {
-    if (
-        !navLinks.contains(event.target) &&
-        !hamburger.contains(event.target)
-    ) {
-        navLinks.classList.remove("open");
-    }
-});
-
 // Obtener la fecha actual
 const fechaElemento = document.getElementById("fecha-hoy");
 const hoy = new Date();
@@ -130,12 +102,13 @@ modalImg.addEventListener("mouseleave", () => {
 const readMoreBtn = document.getElementById("read-more-btn");
 const textContent = document.querySelector(".notices-text-content");
 
-readMoreBtn.addEventListener("click", () => {
-    textContent.classList.toggle("expanded");
-
-    if (textContent.classList.contains("expanded")) {
-        readMoreBtn.textContent = "Leer menos";
-    } else {
-        readMoreBtn.textContent = "Leer más";
-    }
-});
+if (readMoreBtn && textContent) {
+    readMoreBtn.addEventListener("click", () => {
+        textContent.classList.toggle("expanded");
+        if (textContent.classList.contains("expanded")) {
+            readMoreBtn.textContent = "Leer menos";
+        } else {
+            readMoreBtn.textContent = "Leer más";
+        }
+    });
+}

@@ -4,36 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
     <title>Galería Completa - Banderas A Cuadros</title>
-    <link rel="stylesheet" href="/css/styles.css?v=2">
+    <meta name="description" content="Galería completa de imágenes de nuestras coberturas, transmisiones y eventos del deporte motor fueguino.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Titillium+Web:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/styles.css?v=3">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
+    <header>
+        <nav class="main-nav">
+            <div class="nav-content">
+                <a href="../index.html">
+                    <img src="/images/logo_principal.jpg" alt="Logo mini" class="logo-mini">
+                </a>
+                <!-- Botón hamburguesa -->
+                <button class="hamburger" aria-label="Abrir menú">
+                    ☰
+                </button>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html#notices">Noticias</a></li>
+                    <li><a href="../index.html#aboutUs">Nosotros</a></li>
+                    <li><a href="../index.html#gallery">Galería</a></li>
+                </ul>
+                <!-- Fecha -->
+                <div id="fecha-hoy" class="nav-fecha"></div>
+            </div>
+        </nav>
+        <h1>🏁 Galería Completa 🏁</h1>
+
+    </header>
     <main>
-        <header>
-            <nav class="main-nav">
-                <div class="nav-content">
-                    <a href="../index.html">
-                        <img src="/images/logo_principal.jpg" alt="Logo mini" class="logo-mini">
-                    </a>
-                    <!-- Botón hamburguesa -->
-                    <button class="hamburger" aria-label="Abrir menú">
-                        ☰
-                    </button>
-                    <ul class="nav-links">
-                        <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="../index.html#notices">Noticias</a></li>
-                        <li><a href="../index.html#aboutUs">Nosotros</a></li>
-                        <li><a href="../index.html#gallery">Galería</a></li>
-                    </ul>
-                    <!-- Fecha -->
-                    <div id="fecha-hoy" class="nav-fecha"></div>
-                </div>
-            </nav>
-            <h1>🏁 Galería Completa 🏁</h1>
-
-        </header>
-
         <!-- Galería -->
             <h2>Imágenes de nuestras coberturas, transmisiones y eventos del deporte motor fueguino</h2>
 
@@ -56,7 +70,7 @@
         </section>
 
         <div style="text-align:center;">
-            <a href="gallery-complete.html" class="back-btn">Volver al principio</a>
+            <a href="#" class="back-btn">Volver al principio</a>
         </div>
 
         <!-- Lightbox -->
@@ -67,8 +81,30 @@
             <span class="lightbox-next">&#10095;</span>
         </div>
 
+        <script src="/js/nav.js?v=3"></script>
         <script src="/js/script-gallery.js?v=3"></script>
+
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-social">
+                <p class="footer-social--p">Seguinos en nuestras Redes Sociales</p>
+                <a href="https://www.youtube.com/hashtag/banderasacuadrosenorigen" target="_blank"><i
+                        class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/banderasacuadrosrg/" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063793023298" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/5492964541992" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <div class="footer-by">
+                    <p>&copy; 2025 Banderas a Cuadros. Todos los derechos reservados.</p>
+                    <p>Desarrollado por <a href="https://www.linkedin.com/in/burrutyasmin/" target="_blank">Nawsper</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
