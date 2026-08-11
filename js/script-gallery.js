@@ -1,12 +1,3 @@
-// Obtener la fecha actual
-const fechaElemento = document.getElementById("fecha-hoy");
-const hoy = new Date();
-
-// Opciones para mostrar formato legible
-const opciones = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
-fechaElemento.textContent = hoy.toLocaleDateString("es-ES", opciones);
-
-
 // --- Construcción de grid para las galerias ---
 function buildGrid(gridId, total, srcFn, altFn) {
     const grid = document.getElementById(gridId);

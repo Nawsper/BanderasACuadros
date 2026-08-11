@@ -1,6 +1,12 @@
-// --- Menú Hamburguesa ---
-
 document.addEventListener("DOMContentLoaded", () => {
+    // --- Fecha ---
+    const fechaElemento = document.getElementById("fecha-hoy");
+    if (fechaElemento) {
+        const opciones = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+        fechaElemento.textContent = new Date().toLocaleDateString("es-ES", opciones);
+    }
+
+    // --- Menú Hamburguesa ---
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav-links");
 
