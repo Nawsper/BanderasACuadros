@@ -1,0 +1,56 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// --- Botones ver más ---
+.ver-mas,
+.ver-mas-end {
+    @include btn-base;
+    background-color: $color-primary;
+
+    &:hover {
+        background-color: $color-secondary;
+    }
+}
+
+.ver-mas {
+    float: right;
+
+    @include respond-to($bp-md) {
+        float: none;
+        display: block;
+        width: fit-content;
+        margin: 0;
+    }
+}
+
+.ver-mas-end {
+    margin: 2rem auto;
+    display: block;
+    width: fit-content;
+}
+
+// --- Botón volver ---
+.back-btn {
+    @include btn-base;
+    display: inline-block;
+    margin: 20px auto;
+    text-align: center;
+    background-color: $color-accent;
+
+    &:hover {
+        background-color: $color-primary;
+    }
+}
+
+// --- Botón leer más ---
+.read-more-btn {
+    @include btn-base;
+    margin-top: 10px;
+    background-color: $color-primary;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-secondary;
+    }
+}

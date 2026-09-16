@@ -1,0 +1,41 @@
+@use '../abstracts/variables' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: $font-body;
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 4.9rem;
+    background-image: $gradient-body;
+    background-color: $color-bg-body;
+    color: $color-text;
+}
+
+main {
+    padding: 2%;
+}
+
+a {
+    color: $color-accent;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+}

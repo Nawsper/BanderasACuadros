@@ -17,21 +17,21 @@ document.addEventListener("DOMContentLoaded", () => {
 buildGrid(
     "grid-galeria",
     66,
-    (i) => `/images/galeria/image_galery_${i}.jpg`,
+    (i) => `../images/galeria/image_galery_${i}.jpg`,
     (i) => `Imagen ${i}`
 );
 // --- Galería Kids ---
 buildGrid(
     "grid-galeria-kids",
     19,
-    (i) => `/images/galeria_kids/Image_kids_${i}.jpeg`,
+    (i) => `../images/galeria_kids/Image_kids_${i}.jpeg`,
     (i) => `Imagen Kids ${i}`
 );
 // --- Galería Pista ---
 buildGrid(
     "grid-galeria-pista",
     35,
-    (i) => `/images/pista_2026/automovilismo_pista_2026_${i}.jpeg`,
+    (i) => `../images/pista_2026/automovilismo_pista_2026_${i}.jpeg`,
     (i) => `Imagen Pista ${i}`
 );
 

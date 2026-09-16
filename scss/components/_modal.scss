@@ -1,0 +1,36 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.modal-img {
+    @include overlay;
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    // @include flex-center;
+
+    &.show {
+        display: flex !important;
+    }
+
+    img {
+        display: flex !important;
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: $radius-md;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    font-size: 3rem;
+    cursor: pointer;
+    color: $color-text;
+    transition: color $transition-base;
+
+    &:hover {
+        color: $color-primary;
+    }
+}

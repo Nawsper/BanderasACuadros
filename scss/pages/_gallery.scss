@@ -1,0 +1,55 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// --- Grid ---
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px 40px 80px;
+
+    img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: $radius-md;
+        background-color: $color-accent;
+        cursor: pointer;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba($color-accent, 1);
+        }
+    }
+}
+
+// --- Responsive ---
+@include respond-to($bp-md) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .gallery-grid {
+        padding: 15px;
+        gap: 10px;
+
+        img {
+            height: 200px;
+        }
+    }
+}
+
+@include respond-to($bp-sm) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .gallery-grid img {
+        height: 180px;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+    }
+}
