@@ -1,0 +1,132 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.main-nav {
+    background: $gradient-nav;
+    padding: 5px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+
+    & > a:first-child {
+        flex: 0 0 160px;
+    }
+}
+
+.logo-mini {
+    width: 60px;
+    height: 60px;
+    border-radius: $radius-full;
+    border: 2px solid $color-text;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+
+    li a {
+        color: $color-text;
+        text-decoration: none;
+        padding: 10px 15px;
+        font-family: $font-heading;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        border-radius: 20px;
+        transition: background-color $transition-base;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+// --- Botón hamburguesa ---
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: $color-text;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.nav-links {
+    list-style: none;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+// --- Fecha ---
+.nav-fecha {
+    flex: 0 0 160px;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    white-space: nowrap;
+    margin-left: 16px;
+}
+
+// --- Responsive ---
+@include respond-to($bp-md) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: $gradient-nav;
+        flex-direction: column;
+        width: 200px;
+        overflow: hidden;
+        border-radius: 0 0 0 $radius-lg;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height $transition-slow, opacity 0.4s ease;
+
+        &.open {
+            padding: 10px 0;
+            max-height: 300px;
+            opacity: 1;
+        }
+
+        li {
+            text-align: center;
+
+            a {
+                display: block;
+                padding: 12px;
+            }
+        }
+    }
+
+    .nav-fecha {
+        display: none;
+    }
+
+    .main-nav ul {
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+}

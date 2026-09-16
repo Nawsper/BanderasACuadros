@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buildSlides(
         "galeria-wrapper",
         66,
-        (i) => `/images/galeria/image_galery_${i}.jpg`,
+        (i) => `images/galeria/image_galery_${i}.jpg`,
         (i) => `Imagen ${i} de la galería`
     );
 
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buildSlides(
         "galeria-wrapper-kids",
         19,
-        (i) => `/images/galeria_kids/Image_kids_${i}.jpeg`,
+        (i) => `images/galeria_kids/Image_kids_${i}.jpeg`,
         (i) => `Imagen Kids ${i} de la galería`
     );
 
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buildSlides(
         "galeria-wrapper-pista",
         35,
-        (i) => `/images/pista_2026/automovilismo_pista_2026_${i}.jpeg`,
+        (i) => `images/pista_2026/automovilismo_pista_2026_${i}.jpeg`,
         (i) => `Imagen Pista ${i} de la galería`
     );
 
@@ -123,19 +123,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Doble clic en el carrusel principal para abrir la galería completa ---
     const swiperContainer = document.querySelector('.mySwiper');
     swiperContainer.addEventListener('dblclick', () => {
-        window.location.href = '/pages/gallery-complete.html';
+        window.location.href = './pages/gallery-complete.html';
     });
 
     // --- Doble clic en el carrusel Kids para abrir su galería completa ---
     const swiperContainerKids = document.querySelector('.mySwiperKids');
     swiperContainerKids.addEventListener('dblclick', () => {
-        window.location.href = '/pages/gallery-complete.html';
+        window.location.href = './pages/gallery-complete.html';
     });
 
     // --- Doble clic en el carrusel Pista para abrir su galería completa ---
     const swiperContainerPista = document.querySelector('.mySwiperPista');
     swiperContainerPista.addEventListener('dblclick', () => {
-        window.location.href = '/pages/gallery-complete.html';
+        window.location.href = './pages/gallery-complete.html';
     });
 
 });

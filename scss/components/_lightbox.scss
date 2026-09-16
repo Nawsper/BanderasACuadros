@@ -1,0 +1,95 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.lightbox {
+    @include overlay;
+    display: none;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    // @include flex-center;
+    backdrop-filter: blur(4px);
+
+    &.show {
+        display: flex;
+    }
+
+    img {
+        border-radius: $radius-md;
+        box-shadow: 0 0 20px rgba($color-accent, 0.7);
+        animation: fadeIn 0.3s ease;
+        transition: transform 0.2s ease;
+        cursor: zoom-in;
+        max-height: 90vh;
+        max-width: 90vw;
+    }
+}
+
+// --- Botones de navegación ---
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    font-size: 3rem;
+    color: $color-text;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    transform: translateY(-50%);
+    transition: opacity $transition-base;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+// --- Botón cerrar ---
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: $color-text;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color $transition-base;
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+// --- Animación ---
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+// --- Responsive ---
+@include respond-to($bp-md) {
+    .lightbox {
+        img {
+            max-width: 95%;
+            max-height: 70%;
+        }
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 2.2rem;
+    }
+}

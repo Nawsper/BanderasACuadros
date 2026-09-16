@@ -1,0 +1,38 @@
+@use '../abstracts/variables' as *;
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $font-heading;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 3.5rem;
+    animation: titulos 20s infinite;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+@keyframes titulos {
+    50% {
+        color: #000000;
+    }
+}

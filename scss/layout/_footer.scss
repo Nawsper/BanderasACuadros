@@ -1,0 +1,92 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+footer {
+    background-color: $color-bg-footer;
+    color: #f3f3f3;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 0 10px;
+}
+
+.footer-logos {
+    flex: 1;
+    padding: 5px 10px;
+
+    &:first-child {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    &:last-child {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    img {
+        height: 8rem;
+        width: auto;
+    }
+}
+
+.footer-social {
+    text-align: center;
+    flex-grow: 2;
+
+    &--p {
+        margin: 0 0 10px 0;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    & > a {
+        color: $color-text;
+        margin: 0 12px;
+        font-size: 1.8rem;
+        transition: color $transition-base;
+
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+}
+
+.footer-by {
+    margin-top: 15px;
+
+    p {
+        margin: 4px 0;
+        font-size: 0.8rem;
+        color: $color-text-muted;
+    }
+
+    a {
+        color: $color-text;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color $transition-base;
+
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+}
+
+// --- Responsive ---
+@include respond-to($bp-md) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-logos {
+        justify-content: center !important;
+    }
+}

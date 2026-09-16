@@ -1,0 +1,95 @@
+// ============================================
+// SWIPER — Galerías
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// --- Contenedores ---
+.mySwiper,
+.mySwiperPista,
+.mySwiperKids {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .swiper-slide {
+        display: flex;
+        background-position: center;
+        background-size: cover;
+        width: 800px;
+        height: 500px;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 100%;
+            border-radius: 20px;
+            object-fit: contain;
+            background-color: #c5c2c279;
+        }
+    }
+}
+
+// --- Indicador de doble clic ---
+.hint {
+    text-align: center;
+    font-size: 1.2rem;
+    color: $color-primary;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity $transition-slow;
+    pointer-events: none;
+}
+
+.mySwiper:hover + .hint,
+.mySwiperKids:hover + .hint,
+.mySwiperPista:hover + .hint {
+    opacity: 1;
+}
+
+// --- Responsive ---
+@include respond-to($bp-md) {
+    .swiper {
+        max-width: 100%;
+    }
+
+    .swiper-slide {
+        width: 80% !important;
+        background-color: #c5c2c2;
+        border-radius: 10px;
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    #galeria-wrapper-kids img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-pagination {
+        display: none;
+    }
+
+    .hint {
+        font-size: 14px;
+        color: $color-accent;
+        opacity: 1;
+    }
+}
+
+@include respond-to($bp-sm) {
+    .swiper-slide {
+        width: 90% !important;
+
+        img {
+            border-radius: $radius-sm;
+        }
+    }
+
+    .hint {
+        font-size: 12px;
+    }
+}

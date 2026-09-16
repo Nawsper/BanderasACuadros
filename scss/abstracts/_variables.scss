@@ -1,0 +1,33 @@
+// --- Colores ---
+$color-primary:     #fc4a1a;   // Naranja principal — botones, hover, acentos
+$color-secondary:   #f7b733;   // Anaranjado — hover nav, footer, gradiente
+$color-accent:      #ffcc33;   // Amarillo — links, back-btn, galería
+$color-bg-dark:     #383838;   // Fondo oscuro — gradiente body
+$color-bg-body:     #4d4d4d;   // Fondo body
+$color-bg-footer:   #1c1c1c;   // Fondo footer
+$color-text:        #ffffff;   // Texto principal
+$color-text-muted:  #aaaaaa;   // Texto secundario — footer by
+
+// --- Gradientes ---
+$gradient-nav:      linear-gradient(to right, $color-secondary, $color-primary);
+$gradient-body:     linear-gradient(to bottom right, $color-bg-dark, #d3d3d3);
+
+// --- Tipografía ---
+$font-body:         "Roboto", sans-serif;
+$font-heading:      "Oswald", sans-serif;
+
+// --- Breakpoints ---
+$bp-sm:             480px;
+$bp-md:             768px;
+$bp-lg:             900px;
+$bp-xl:             1024px;
+
+// --- Bordes y radios ---
+$radius-sm:         8px;
+$radius-md:         12px;
+$radius-lg:         15px;
+$radius-full:       50%;
+
+// --- Transiciones ---
+$transition-base:   0.3s ease;
+$transition-slow:   0.5s ease;
