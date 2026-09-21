@@ -14,7 +14,7 @@ Este proyecto tiene como objetivo difundir carreras y actividades relacionadas a
 ---
 
 ## 🌐 Sitio Web
-👉 [www.banderasacuadros.com](https://www.banderasacuadros.com) *(en construcción)*
+👉 [https://banderas-a-cuadros.vercel.app/](https://banderas-a-cuadros.vercel.app/)
 
 ---
 
@@ -23,7 +23,7 @@ Este proyecto tiene como objetivo difundir carreras y actividades relacionadas a
 - **SCSS (Sass)**
 - **JavaScript**
 - **Git & GitHub** para control de versiones
-- **Hostinger** como hosting
+- **Hostinger / Vercel** como hosting
 - Futuras integraciones con **frameworks/librerías JS** según necesidades
 
 ---
